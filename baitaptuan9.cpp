@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// --- 1. KHAI BÁO CẤU TRÚC ---
+// 1.KHAI BÁO CẤU TRÚC
 struct Ngay {
     int ngay, thang, nam;
 };
@@ -28,7 +28,7 @@ struct List {
     Node *first;
     Node *last;
 };
-
+// Khoi tao danh sach rỗng
 void Init(List &l) {
     l.first = l.last = NULL;
 }
@@ -40,7 +40,7 @@ Node* CreateNode(SinhVien sv) {
     return p;
 }
 
-// --- 2. HÀM THÊM SINH VIÊN CÓ SẮP XẾP ---
+// 2.HÀM THÊM SINH VIÊN CÓ SẮP Xếp
 void InsertOrder(List &l, SinhVien sv) {
     Node *p = CreateNode(sv);
     // Nếu danh sách rỗng hoặc mã SV nhỏ hơn node đầu tiên
@@ -59,7 +59,7 @@ void InsertOrder(List &l, SinhVien sv) {
     }
 }
 
-// --- HÀM IN DANH SÁCH ---
+// HÀM IN DANH SÁCH 
 void PrintList(List l) {
     cout << left << setw(10) << "MSSV" 
          << setw(20) << "Ho Ten" 
@@ -72,7 +72,7 @@ void PrintList(List l) {
     }
 }
 
-// --- 3. IN SINH VIÊN CÙNG NGÀY SINH ---
+// 3. IN SINH VIÊN CÙNG NGÀY SINH 
 void SearchByBirthday(List l, Ngay d) {
     bool found = false;
     for (Node *p = l.first; p != NULL; p = p->link) {
@@ -84,7 +84,7 @@ void SearchByBirthday(List l, Ngay d) {
     if (!found) cout << "Khong tim thay sinh vien cung ngay sinh" << endl;
 }
 
-// --- 4. LOẠI BỎ SINH VIÊN CÙNG NGÀY SINH ---
+// 4. LOẠI BỎ SINH VIÊN CÙNG NGÀY SINH 
 void RemoveByBirthday(List &l, Ngay d) {
     Node *p = l.first;
     Node *prev = NULL;
@@ -117,17 +117,17 @@ void RemoveByBirthday(List &l, Ngay d) {
     SinhVien sv2 = {"197403", "Nguyen Thi B", 1, {20, 8, 2005}, "HCM", "DTVT", "K21"};
     SinhVien sv3 = {"197402", "Nguyen Thi Thu T", 0, {15, 5, 2005}, "Da Nang", "KT", "K21"};
 
-    cout << "--- TEST 1: Them SV (Tu dong sap xep MSSV) ---" << endl;
+    cout << "TEST 1: Them SV (Tu dong sap xep MSSV) " << endl;
     InsertOrder(myDS, sv1); // MSSV: 01
     InsertOrder(myDS, sv2); // MSSV: 03
     InsertOrder(myDS, sv3); // MSSV: 02 
     PrintList(myDS);
 
-    cout << "\n--- TEST 2: Tim SV cung ngay 15/5/2005 ---" << endl;
+    cout << "\n TEST 2: Tim SV cung ngay 15/5/2005 " << endl;
     Ngay checkDate = {15, 5, 2005};
     SearchByBirthday(myDS, checkDate);
 
-    cout << "\n--- TEST 3: Loai bo SV ngay 15/5/2005 ---" << endl;
+    cout << "\nTEST 3: Loai bo SV ngay 15/5/2005 " << endl;
     RemoveByBirthday(myDS, checkDate);
     PrintList(myDS);
     
