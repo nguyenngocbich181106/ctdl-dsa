@@ -7,8 +7,7 @@ struct Node {
     string data;      // Chứa toán tử hoặc toán hạng
     Node* left;       // Con trỏ trỏ đến nút con bên trái
     Node* right;      // Con trỏ trỏ đến nút con bên phải
-
-    // Hàm khởi tạo nhanh một nút mới
+// Hàm khởi tạo nhanh một nút mới
     Node(string val) {
         data = val;
         left = nullptr;
@@ -18,8 +17,7 @@ struct Node {
 
 // 2. Các hàm duyệt cây biểu thức
 
-// A. Duyệt trước (Pre-order / Ký pháp tiền tố - Prefix)
-// Thứ tự: Gốc -> Con trái -> Con phải
+// Duyet truoc
 void duyetTruoc(Node* root) {
     if (root == nullptr) return;
 
@@ -28,8 +26,7 @@ void duyetTruoc(Node* root) {
     duyetTruoc(root->right);   // Duyệt Phải
 }
 
-// B. Duyệt giữa (In-order / Ký pháp trung tố - Infix)
-// Thứ tự: Con trái -> Gốc -> Con phải
+// Duyet giua
 void duyetGiua(Node* root) {
     if (root == nullptr) return;
 
@@ -48,8 +45,7 @@ void duyetGiua(Node* root) {
     }
 }
 
-// C. Duyệt sau (Post-order / Ký pháp hậu tố - Postfix)
-// Thứ tự: Con trái -> Con phải -> Gốc
+// Duyet sau
 void duyetSau(Node* root) {
     if (root == nullptr) return;
 
@@ -58,7 +54,7 @@ void duyetSau(Node* root) {
     cout << root->data << " "; // Duyệt Gốc
 }
 
-// Hàm chính để chạy chương trình
+// Hàm main
 int main() {
     // 3. Khởi tạo thủ công cây biểu thức cho: (a + b) * c
     // Tạo nút gốc là toán tử nhân '*'
