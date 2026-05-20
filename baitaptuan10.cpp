@@ -56,7 +56,7 @@ void duyetSau(Node* root) {
 
 // Hàm main
 int main() {
-    // 3. Khởi tạo thủ công cây biểu thức cho: (a + b) * c
+    // 3. (a+b) * c
     // Tạo nút gốc là toán tử nhân '*'
     Node* root = new Node("*");
 
