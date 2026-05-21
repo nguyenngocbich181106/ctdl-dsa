@@ -21,9 +21,9 @@ struct Node {
 void duyetTruoc(Node* root) {
     if (root == nullptr) return;
 
-    cout << root->data << " "; // Duyệt Gốc
-    duyetTruoc(root->left);    // Duyệt Trái
-    duyetTruoc(root->right);   // Duyệt Phải
+    cout << root->data << " "; // Duyệt roots
+    duyetTruoc(root->left);    // Duyệt left
+    duyetTruoc(root->right);   // Duyệt right
 }
 
 // Duyet giua
