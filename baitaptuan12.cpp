@@ -39,3 +39,16 @@ void vunDong(vector<int>& arr, int n, int i) {
         vunDong(arr, n, lonNhat);
     }
 }
+
+// Hàm thực hiện thuật toán Sắp xếp vun đống (Heap Sort)
+void sapXepVunDong(vector<int>& arr) {
+    int n = arr.size() - 1; // Số lượng phần tử thực tế (bỏ qua chỉ số 0)
+
+    // 1: Vun đống ban đầu
+    cout << " GIAI DOAN 1: VUN DONG BAN DAU " << endl;
+    for (int i = n / 2; i >= 1; i--) {
+        vunDong(arr, n, i);
+    }
+    cout << "Trang thai mang sau khi vun dong xong:\n";
+    inMang(arr, n);
+    cout << "-----------------------------------------------------\n\n";
