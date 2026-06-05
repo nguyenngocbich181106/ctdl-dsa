@@ -65,7 +65,7 @@ void inorder(Node* root) {
         inorder(root->right);
     }
 }
-}
+
 
 int main() {
     Node* root = nullptr;
