@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
-
+// Hàm xuất trạng thái lưu trữ của mảng tại mỗi bước
+void inMang(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 
 // Hàm vun đống tại một nút có chỉ số `i`
 void vunDong(int arr[], int n, int i) {
@@ -41,7 +47,7 @@ void sapXepVunDong(int arr[], int n) {
         // Đưa phần tử lớn nhất (ở gốc arr[0]) về cuối mảng hiện tại (arr[i])
         swap(arr[0], arr[i]);
         cout << "Doi cho goc (max) voi arr[" << i << "]: ";
-        inMang(arr, n)
+        inMang(arr, n);
 
         // Vun lại đống cho phần còn lại (kích thước giảm xuống còn i)
         vunDong(arr, i, 0);
