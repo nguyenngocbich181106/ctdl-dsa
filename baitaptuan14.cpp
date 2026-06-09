@@ -42,17 +42,30 @@ void sapXepVunDong(int arr[], int n) {
     }
 
     cout << "\n GIAI DOAN 2: TACH GOC VA TAI CAU TRUC DONG" << endl;
-    // Trích xuất từng phần tử từ đống ra mảng đã sắp xếp
-    for (int i = n - 1; i > 0; i--) {
-        // Đưa phần tử lớn nhất (ở gốc arr[0]) về cuối mảng hiện tại (arr[i])
+    for (int i = n - 1; i > 0; i--)
         swap(arr[0], arr[i]);
         cout << "Doi cho goc (max) voi arr[" << i << "]: ";
         inMang(arr, n);
 
-        // Vun lại đống cho phần còn lại (kích thước giảm xuống còn i)
         vunDong(arr, i, 0);
         cout << "Hieu chinh lai dong (kich thuoc " << i << "): ";
         inMang(arr, n);
         cout << "-----------------------------------------------" << endl;
     }
+}
+int main() {
+    int arr[] = {32, 51, 27, 83, 96, 11, 45, 75, 66};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    cout << "Mang khoi tao ban dau: ";
+    inMang(arr, n);
+    cout << endl;
+
+    // Chạy thuật toán sắp xếp
+    sapXepVunDong(arr, n)
+
+    cout << "\nMang sau khi da sap xep tang dan: ";
+    inMang(arr, n);
+
+    return 0;
 }
