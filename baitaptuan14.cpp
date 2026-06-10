@@ -42,7 +42,7 @@ void sapXepVunDong(int arr[], int n) {
     }
 
     cout << "\n GIAI DOAN 2: TACH GOC VA TAI CAU TRUC DONG" << endl;
-    for (int i = n - 1; i > 0; i--)
+    for (int i = n - 1; i > 0; i--){
         swap(arr[0], arr[i]);
         cout << "Doi cho goc (max) voi arr[" << i << "]: ";
         inMang(arr, n);
@@ -62,7 +62,7 @@ int main() {
     cout << endl;
 
     // Chạy thuật toán sắp xếp
-    sapXepVunDong(arr, n)
+    sapXepVunDong(arr, n);
 
     cout << "\nMang sau khi da sap xep tang dan: ";
     inMang(arr, n);
