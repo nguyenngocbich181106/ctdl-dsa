@@ -39,4 +39,42 @@ public:
             cout << "Loi: Dinh khong ton tai!\n";
             return;
         }
-        
+        int id_u = anhXaTen[u];
+        int id_v = anhXaTen[v];
+
+        maTran[id_u][id_v] = 1;
+        maTran[id_v][id_u] = 1;
+    }
+
+    void BFS(string dinhBatDau) {
+        if (anhXaTen.find(dinhBatDau) == anhXaTen.end()) {
+            cout << "Khong tim thay dinh!\n";
+            return;
+        }
+
+        int start = anhXaTen[dinhBatDau];
+
+        vector<bool> daTham(V, false);
+        queue<int> hangDoi;
+
+        daTham[start] = true;
+        hangDoi.push(start);
+
+        cout << "\nThu tu duyet BFS tu " << dinhBatDau << ":\n";
+
+        while (!hangDoi.empty()) {
+            int u = hangDoi.front();
+            hangDoi.pop();
+
+            cout << tenDinh[u] << " ";
+
+            for (int v = 0; v < V; v++) {
+                if (maTran[u][v] == 1 && !daTham[v]) {
+                    daTham[v] = true;
+                    hangDoi.push(v);
+                }
+            }
+        }
+        cout << endl;
+    }
+};
