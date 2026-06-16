@@ -25,4 +25,18 @@ public:
             }
         }
     }
-};
+    void themDinh(string ten) {
+        if (anhXaTen.find(ten) == anhXaTen.end() && V < MAX_THANHPHO) {
+            tenDinh[V] = ten;
+            anhXaTen[ten] = V;
+            V++;
+        }
+    }
+
+    void themCanh(string u, string v) {
+        if (anhXaTen.find(u) == anhXaTen.end() ||
+            anhXaTen.find(v) == anhXaTen.end()) {
+            cout << "Loi: Dinh khong ton tai!\n";
+            return;
+        }
+        
