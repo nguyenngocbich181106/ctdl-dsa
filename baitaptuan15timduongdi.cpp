@@ -100,3 +100,57 @@ public:
 
         cout << endl;
     }
+void duongDiNganNhat(string diemDau, string diemCuoi) {
+
+        cout << "\n===== DUONG DI NGAN NHAT =====\n";
+
+        timDuongDi(diemDau, diemCuoi);
+    }
+};
+
+int main() {
+
+    DoThiMaTranKe g;
+
+    // Them cac thanh pho
+    g.themDinh("Ha Noi");
+    g.themDinh("Hai Duong");
+    g.themDinh("Hung Yen");
+    g.themDinh("Phu Ly");
+    g.themDinh("Hoa Binh");
+    g.themDinh("Son Tay");
+    g.themDinh("Thai Nguyen");
+    g.themDinh("Bac Ninh");
+    g.themDinh("Bac Giang");
+    g.themDinh("Uong Bi");
+    g.themDinh("Hai Phong");
+
+    // Them cac tuyen duong (D1 -> D13)
+    g.themCanh("Ha Noi", "Hai Duong");
+    g.themCanh("Hai Duong", "Hung Yen");
+    g.themCanh("Hung Yen", "Phu Ly");
+    g.themCanh("Phu Ly", "Ha Noi");
+    g.themCanh("Hoa Binh", "Ha Noi");
+    g.themCanh("Son Tay", "Ha Noi");
+    g.themCanh("Thai Nguyen", "Ha Noi");
+    g.themCanh("Ha Noi", "Bac Ninh");
+    g.themCanh("Bac Ninh", "Bac Giang");
+    g.themCanh("Bac Giang", "Uong Bi");
+    g.themCanh("Bac Ninh", "Uong Bi");
+    g.themCanh("Uong Bi", "Hai Phong");
+    g.themCanh("Hai Duong", "Hai Phong");
+
+    // Hien thi ma tran ke
+    g.hienThiMaTranKe();
+
+    // BFS tu Ha Noi
+    g.BFS("Ha Noi");
+
+    // Tim duong di
+    g.timDuongDi("Ha Noi", "Hai Phong");
+
+    // Tim duong di ngan nhat
+    g.duongDiNganNhat("Hoa Binh", "Hai Phong");
+
+    return 0;
+}
